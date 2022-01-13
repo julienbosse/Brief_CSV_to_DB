@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+        <title>CSV vers BDD</title>
+
+         <!-- Bootstrap CSS CDN -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- Our Custom CSS -->
+        <link rel="stylesheet" href="/static/css/style.css">
+    </head>
+    <body>
+
+
+
+        <div class="wrapper">
+            <!-- Sidebar Holder -->
+            <nav id="sidebar">
+                <div class="sidebar-header">
+                    <h3> CSV vers BDD</h3>
+                    <h4> Julien Bosse</h4>
+                    <h4> Simplon</h4>
+
+                </div>
+            </nav>
+
+            <!-- Page Content Holder -->
+            <div id="content">
+                <div class="container">
+                    <div class="row justify-content-md-center">
+                        <div class="col col-lg-4"></div>
+                        <div class="col col-lg-8">
+                            <!-- <nav class="navbar navbar-default">
+                                <div class="container-fluid">
+                                    <div class="navbar-header">
+                                        <button type="button" id="sidebarCollapse" class="btn btn-info navbar-btn">
+                                            <i class="glyphicon glyphicon-align-left"></i>
+                                            <span>Menu</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </nav> -->
+
+                            <div class="text-center margintb rounded">
+                                <img src="https://simplonline.co/_next/image?url=https%3A%2F%2Fsimplonline-v3-prod.s3.eu-west-3.amazonaws.com%2Fmedia%2Fimage%2Fjpg%2Fc89dd556-3685-46f7-9829-1f96ce7cf4f8.jpg&w=1280&q=75" class="img-rounded" width="80%">
+                            </div>
+            
+                            <h2>D'un CSV vers une base de données et l'affichage de ses données par requête</h2>
+                            <p>Création de la base de données.</p>
+                            <p>Dans notre cas, l'algorithme a été entrainé avec des milliers d'images comprenant des visages, et des milliers n'en contenant pas.</p>
+                            <div class="line"></div>
+
+                            <h3 class="mt-5">Requêtes</h3>
+                            <div class="text-center margintb">
+                                <img class="img-rounded" src="" width="70%">
+                            </div>
+                            <a class="btn btn-primary" href="{{ url_for('result') }}" role="button">Go</a>
+                            
+            
+                            <div class="line"></div>
+            
+                            <h3>Graphiques</h3>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+                            <a class="btn btn-primary" href="{{ url_for('result') }}" role="button">Go</a>
+                            
+                        </div>
+                        <div class="col col-lg-1"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <!-- jQuery CDN -->
+         <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
+         <!-- Bootstrap Js CDN -->
+         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+         <script type="text/javascript">
+             $(document).ready(function () {
+                 $('#sidebarCollapse').on('click', function () {
+                     $('#sidebar').toggleClass('active');
+                 });
+             });
+         </script>
+    </body>
+</html>
