@@ -9,9 +9,10 @@ D'un CSV vers une base de données et l'affichage de ses données par requête.
 git clone https://github.com/julienbosse/Brief_CSV_to_DB.git
 ```
 
-Il faut ensuite installer idéalment créer un environnement virtuel et installer les librairies nécessaires :
+Il faut ensuite installer idéalement créer un environnement virtuel et installer les librairies nécessaires :
 
 ```bash
+cd Brief_CSV_to_DB
 python -m venv venv
 ```
 
