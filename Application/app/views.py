@@ -142,6 +142,35 @@ def result_query():
 
 @app.route('/result_graph', methods=['GET', 'POST'])
 def result_graph():
+
+    variable = request.form['variable']
+
+    path_credentials = '../sql_credentials.json'
+
+    query = f"SELECT {variable}.name FROM person JOIN {variable} ON person.{variable}_id = {variable}.{variable}_id"
+
+    # On récupère les credentials dans un json pour se connecter à la db
+    with open(path_credentials) as file:
+        credentials = json.load(file)
+        myUser = credentials['user']
+        myPassword = credentials['password']
+        myHost = credentials['host']
+
+    engine = create_engine('mysql+pymysql://'+myUser+':'+myPassword+'@'+myHost+'/'+'brief_csv')
+
+    try :
+        response = pd.read_sql_query(query, engine)
+        plt.figure(figsize=(11,12))
+        plt.title(f"Diagramme à batons de : {variable}")
+        ax = response.value_counts().head(15).plot(kind='barh').invert_yaxis()
+        plt.yticks(rotation=45)
+        plt.savefig('app/static/img/graph.png')
+
+    except Exception as e:
+        response = f"Une erreur est survenue lors de la requête SQL: {e} "
+
+    
+
     return render_template('result_graph.html')
 
 
