@@ -118,7 +118,7 @@ def result_query():
 
     query = request.form['query']
 
-    path_credentials = '../sql_credentials.json'
+    path_credentials = 'app/static/sql_credentials.json'
 
     # On récupère les credentials dans un json pour se connecter à la db
     with open(path_credentials) as file:
@@ -145,7 +145,7 @@ def result_graph():
 
     variable = request.form['variable']
 
-    path_credentials = '../sql_credentials.json'
+    path_credentials = 'app/static/sql_credentials.json'
 
     query = f"SELECT {variable}.name FROM person JOIN {variable} ON person.{variable}_id = {variable}.{variable}_id"
 
