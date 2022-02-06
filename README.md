@@ -5,3 +5,7 @@ D'un CSV vers une base de données et l'affichage de ses données par requête.
 
 ## Requirements
 
+```bash
+git clone https://github.com/julienbosse/Brief_CSV_to_DB.git
+
+```
