@@ -22,7 +22,6 @@
                 <div class="sidebar-header">
                     <h3> CSV vers BDD</h3>
                     <h4> Julien Bosse</h4>
-                    <h4> Simplon</h4>
 
                 </div>
             </nav>
@@ -50,32 +49,43 @@
             
                             <h2>D'un CSV vers une base de données et l'affichage de ses données par requête</h2>
                             <p>Création de la base de données.</p>
-                            <p>Dans notre cas, l'algorithme a été entrainé avec des milliers d'images comprenant des visages, et des milliers n'en contenant pas.</p>
                             <div class="line"></div>
 
                             <h3 class="mt-5">Requêtes</h3>
+
+                            <p>Voici un graph qui représente la base de données relationnelle créée. En se basant dessus, il est possible de faire des requêtes dans la zone de texte ci dessous. </p>
                             <div class="text-center margintb">
-                                <img class="img-rounded" src="" width="70%">
+                                <img class="img-rounded" src="/static/img/bdd_brief_csv.png" width="65%">
                             </div>
-                            <a class="btn btn-primary" href="{{ url_for('result') }}" role="button">Go</a>
+
+                            <form action="{{ url_for('result_query') }}" method="post">
+                                <div class="form-group">
+                                  <label for="exampleInputEmail1">Requête</label>
+                                  <textarea class="form-control" rows="6" id="query" name="query" value="SELECT person.lastname,person.firstname,country.name FROM person
+                                  JOIN country
+                                  ON person.country_id = country.country_id
+                                  WHERE country.name = 'France'" required>SELECT person.lastname,person.firstname,country.name FROM person
+                                  JOIN country
+                                  ON person.country_id = country.country_id
+                                  WHERE country.name = "France"</textarea>
+                                  <small id="formHelp" class="form-text text-muted">Une seule requête, et en respectant le format SQL. Si aucune LIMIT n'est spécifiée, la LIMIT par défaut est 50.</small>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Envoyer</button>
+                            </form>
                             
             
                             <div class="line"></div>
             
                             <h3>Graphiques</h3>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-                            <a class="btn btn-primary" href="{{ url_for('result') }}" role="button">Go</a>
-                            
+                            <a class="btn btn-primary" href="{{ url_for('result_graph') }}" role="button">Go</a>
+
                         </div>
                         <div class="col col-lg-1"></div>
                     </div>
                 </div>
             </div>
         </div>
-
-
-
-
 
         <!-- jQuery CDN -->
          <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
