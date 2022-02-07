@@ -24,7 +24,7 @@ def index():
     table_domain_name = models.make_table('domain_name', data)
     table_person = data[['person_id','email_address','firstname','lastname','city_id','movie_genre_id','domain_name_id','country_id','job_title_id']]
 
-    path_credentials = '../sql_credentials.json'
+    path_credentials = 'app/static/sql_credentials.json'
 
     # On récupère les credentials dans un json pour se connecter à la db
     with open(path_credentials) as file:
